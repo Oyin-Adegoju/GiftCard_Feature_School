@@ -1,0 +1,72 @@
+@startuml
+
+class GiftCard {
+    - id: Long
+    - name: String
+    - amount: Double
+    - image: String
+    - active: boolean
+
+    + GiftCard()
+    + GiftCard(name: String, amount: Double, image: String, active: boolean)
+    + GiftCard(id: Long, name: String, amount: Double, image: String, active: boolean)
+    + getId(): Long
+    + setId(id: Long): void
+    + getName(): String
+    + setName(name: String): void
+    + getAmount(): Double
+    + setAmount(amount: Double): void
+    + getImage(): String
+    + setImage(image: String): void
+    + isActive(): boolean
+    + setActive(active: boolean): void
+}
+
+class GiftCardDTO {
+    - id: Long
+    - name: String
+    - amount: Double
+    - image: String
+
+    + GiftCardDTO()
+    + GiftCardDTO(id: Long, name: String, amount: Double, image: String)
+    + getId(): Long
+    + setId(id: Long): void
+    + getName(): String
+    + setName(name: String): void
+    + getAmount(): Double
+    + setAmount(amount: Double): void
+    + getImage(): String
+    + setImage(image: String): void
+}
+
+interface GiftCardRepository {
+    + findAllByActiveTrue(): List<GiftCard>
+}
+
+class GiftCardDAO {
+    - giftCardRepository: GiftCardRepository
+
+    + GiftCardDAO(giftCardRepository: GiftCardRepository)
+    + getAllActiveGiftCards(): List<GiftCard>
+    + getGiftCardById(id: long): GiftCard
+    + createGiftCard(giftCard: GiftCard): void
+    + updateGiftCard(giftCardDTO: GiftCardDTO, id: Long): void
+    + deleteById(id: Long): void
+}
+
+class GiftCardController {
+    - giftCardDAO: GiftCardDAO
+
+    + GiftCardController(giftCardDAO: GiftCardDAO)
+    + getAllActiveGiftCards(): ResponseEntity<List<GiftCard>>
+    + getProductById(id: Long): ResponseEntity<GiftCard>
+    + updateProduct(id: Long, giftCardDTO: GiftCardDTO): ResponseEntity<String>
+    + deleteById(id: Long): ResponseEntity<String>
+}
+
+GiftCard -- GiftCardDTO: <<DTO>>
+GiftCardDAO ..> GiftCardRepository: Uses
+GiftCardController ..> GiftCardDAO: Uses
+
+@enduml
