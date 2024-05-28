@@ -1,0 +1,91 @@
+<div class="container mt-5">
+    <form [formGroup]="bestelForm" style="width: 100%">
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="form-outline">
+            <input type="text" id="form1.1" class="form-control" placeholder="Name" formControlName="name" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-outline">
+            <input type="number" id="form1.2" class="form-control" placeholder="Amount" formControlName="amount" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-outline">
+            <input type="text" id="form1.3" class="form-control" placeholder="Image URL" formControlName="image">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md text-end">
+          <button [disabled]="!bestelForm.valid" type="button" class="btn btn-primary btn-block" (click)="onSubmit()">
+            Add Gift Card
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  @if (loadingGiftCards) {
+    <p>Loading gifcards...</p>
+  } @else {
+    <div class="gift-card-container">
+        <h2>Gift Cards</h2>
+        <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Code</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+    @for (card of giftCards; track $index) {
+            <tr>
+              <td>{{ card.name }}</td>
+              <td>{{ card.amount }}</td>
+              <td>{{ card.cardCode }}</td>
+              <td><img [src]="card.image" alt="Gift Card Image"></td>
+              <td>
+                <button (click)="deleteCard(card.id)">Delete</button>
+              </td>
+            </tr>    
+    }
+</tbody>
+</table>
+</div>
+</div>
+  }
+  <div class="gift-card-container">
+    <h2>Users Gift Cards Details</h2>
+    <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Amount</th>
+          <th>Send By</th>
+          <th>Recieved By</th>
+        </tr>
+      </thead>
+      <tbody>
+@for (uc of userGiftCards; track $index) {
+        <tr>
+          <td>{{ uc.giftCard.name }}</td>
+          <td>{{ uc.giftCard.cardCode }}</td>
+          <td>{{ uc.giftCard.amount }}</td>
+          <td>{{ uc.sendBy.name }}</td>
+          <td>{{ uc.receivedBy.name }}</td>
+        </tr>    
+}
+</tbody>
+</table>
+</div>
+</div>
+  
+  
