@@ -19,7 +19,7 @@ describe('Customer Login and Navigation', () => {
     cy.get('a.nav-link').contains('Profile').should('be.visible').click();
 
     // Wait for the profile page to load and check that the URL includes the profile page path
-    cy.url().should('ainclude', '/profile');
+    cy.url().should('include', '/profile');
 
     // Check for some element that is unique to the profile page
     cy.get('h5.card-title').should('contain', 'Profile Information');
