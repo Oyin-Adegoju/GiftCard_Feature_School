@@ -1,26 +1,26 @@
-version: '3.8'
-
-services:
-  db:
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: database_test
-    ports:
-      - "5432:5432"  # Map port 5432 in the container to port 5433 on the host
-
-  backend:
-    build:
-      context: C:/Users/Oyin Adegoju/webshopbob-start01-main/luxuryproducts-backend
-      dockerfile: Dockerfile
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/database_test
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
-    depends_on:
-      - db
-    ports:
-      - "8080:8080"
-
-
+#version: '3.8'
+#
+#services:
+#  db:
+#    image: postgres:latest
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: database_test
+#    ports:
+#      - "5432:5432"  # Map port 5432 in the container to port 5433 on the host
+#
+#  backend:
+#    build:
+#      context: C:/Users/Oyin Adegoju/webshopbob-start01-main/luxuryproducts-backend
+#      dockerfile: Dockerfile
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/database_test
+#      SPRING_DATASOURCE_USERNAME: postgres
+#      SPRING_DATASOURCE_PASSWORD: postgres
+#    depends_on:
+#      - db
+#    ports:
+#      - "8080:8080"
+#
+#
