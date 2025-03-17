@@ -52,9 +52,9 @@ public class Seeder {
                 "https://store.ubisoft.com/on/demandware.static/-/Sites-masterCatalog/default/dw63e24d90/images/large/56c494ad88a7e300458b4d5a.jpg",
                 FPS,
                 "OS *: Originally released for Windows 7, the game can be played on Windows 10 and Windows 11 OS" +
-                "Processor: Intel Core i5-2500K @ 3.3 GHz or better or AMD FX-8120 @ 3.1 Ghz or better\n" +
-                "Memory: 8 GB RAM\n" +
-                "Graphics: NVIDIA GeForce GTX 670 or AMD Radeon HD 7970",
+                        "Processor: Intel Core i5-2500K @ 3.3 GHz or better or AMD FX-8120 @ 3.1 Ghz or better\n" +
+                        "Memory: 8 GB RAM\n" +
+                        "Graphics: NVIDIA GeForce GTX 670 or AMD Radeon HD 7970",
                 "1-Dec-2015",
                 "Ubisoft");
         Product mortalKombar1 = new Product(
@@ -64,13 +64,13 @@ public class Seeder {
                 "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSAMOK3cjH0oK89AraaQ_DJQ3EyioLRJxCnq0X2lLPXDisjyn1XOuwGkRLht5b1c7d7G6Uk2w",
                 fighter,
                 "Requires a 64-bit processor and operating system\n" +
-                "OS: Windows 10/11 64-bit\n" +
-                "Processor: Intel® Core™ i5-8400 | AMD Ryzen™ 5 3600X\n" +
-                "Memory: 8 GB RAM\n" +
-                "Graphics: Nvidia GeForce® GTX 1080 Ti or AMD Radeon™ RX 5700 XT or Intel® Arc™ A770\n" +
-                "DirectX: Version 12\n" +
-                "Storage: 140 GB available space\n" +
-                "Additional Notes: SSD",
+                        "OS: Windows 10/11 64-bit\n" +
+                        "Processor: Intel® Core™ i5-8400 | AMD Ryzen™ 5 3600X\n" +
+                        "Memory: 8 GB RAM\n" +
+                        "Graphics: Nvidia GeForce® GTX 1080 Ti or AMD Radeon™ RX 5700 XT or Intel® Arc™ A770\n" +
+                        "DirectX: Version 12\n" +
+                        "Storage: 140 GB available space\n" +
+                        "Additional Notes: SSD",
                 "19 Sep, 2023",
                 "Warner Bros. Games");
         Product eldenRing = new Product(
@@ -80,10 +80,10 @@ public class Seeder {
                 "https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg",
                 soulsLike,
                 "Requires a 64-bit processor and operating system\n" +
-                "OS: Windows 10/11\n" +
-                "Processor: INTEL CORE I7-8700K or AMD RYZEN 5 3600X\n" +
-                "Memory: 16 GB RAM\n" +
-                "Graphics: NVIDIA GEFORCE GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB",
+                        "OS: Windows 10/11\n" +
+                        "Processor: INTEL CORE I7-8700K or AMD RYZEN 5 3600X\n" +
+                        "Memory: 16 GB RAM\n" +
+                        "Graphics: NVIDIA GEFORCE GTX 1070 8 GB or AMD RADEON RX VEGA 56 8 GB",
                 "25-Feb-2022",
                 "FromSoftware Inc., Bandai Namco Entertainment");
         Product helldivers2 = new Product(
